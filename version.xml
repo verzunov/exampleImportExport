@@ -11,7 +11,7 @@
 -->
 
 <version>
-	<application>exampleImportExport</application>
+	<application>rsciExport</application>
 	<type>plugins.importexport</type>
 	<release>1.0.0.0</release>
 	<date>2023-03-09</date>

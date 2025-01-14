@@ -18,8 +18,8 @@
 		<table class="pkpTable">
 			<thead>
 				<tr>
-					<th>{translate key="plugins.importexport.exampleImportExport.id"}</th>
-					<th>{translate key="plugins.importexport.exampleImportExport.title"}</th>
+					<th>{translate key="plugins.importexport.rsciExport.id"}</th>
+					<th>{translate key="plugins.importexport.rsciExport.title"}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -33,7 +33,7 @@
 		</table>
 
 		<form method="POST" action="{plugin_url path="exportAll"}">
-			<button class="pkp_button" type="submit">{translate key="plugins.importexport.exampleImportExport.exportAll"}</button>
+			<button class="pkp_button" type="submit">{translate key="plugins.importexport.rsciExport.exportAll"}</button>
 		</form>
 	</div>
 {/block}

@@ -11,20 +11,20 @@ msgstr ""
 "PO-Revision-Date: 2020-03-09T16:45:25+00:00\n"
 "Language: \n"
 
-msgid "plugins.importexport.exampleImportExport.name"
-msgstr "Example Import/Export Plugin"
+msgid "plugins.importexport.rsciExport.name"
+msgstr "Rsci Import/Export Plugin"
 
-msgid "plugins.importexport.exampleImportExport.description"
-msgstr "An example plugin demonstrating how to create an import/export plugin."
+msgid "plugins.importexport.rsciExport.description"
+msgstr "An rsci plugin demonstrating how to create an import/export plugin."
 
-msgid "plugins.importexport.exampleImportExport.id"
+msgid "plugins.importexport.rsciExport.id"
 msgstr "ID"
 
-msgid "plugins.importexport.exampleImportExport.title"
+msgid "plugins.importexport.rsciExport.title"
 msgstr "Title"
 
-msgid "plugins.importexport.exampleImportExport.exportAll"
+msgid "plugins.importexport.rsciExport.exportAll"
 msgstr "Export All"
 
-msgid "plugins.importexport.exampleImportExport.cliUsage"
+msgid "plugins.importexport.rsciExport.cliUsage"
 msgstr "Usage: {$scriptName} {$pluginName} [csvFileName] [journalId]"
