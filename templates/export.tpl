@@ -1,3 +1,4 @@
+
 {**
  * templates/export.tpl
  *
@@ -17,18 +18,19 @@
 	<div class="app__contentPanel">
 		<table class="pkpTable">
 			<thead>
-				<tr>
-					<th>{translate key="plugins.importexport.rsciExport.id"}</th>
-					<th>{translate key="plugins.importexport.rsciExport.title"}</th>
-				</tr>
+			<tr>
+				<th>{translate key="plugins.importexport.rsciExport.id"}</th>
+				<th>{translate key="plugins.importexport.rsciExport.title"}</th>
+			</tr>
 			</thead>
 			<tbody>
-				{foreach $submissions as $submission}
-					<tr>
-						<td>{$submission->getId()}</td>
-						<td>{$submission->getCurrentPublication()->getLocalizedFullTitle()}</td>
-					</tr>
-				{/foreach}
+			{foreach $issues as $issue}
+				<tr>
+					<td>{$issue->getId()}</td>
+					<td>{$issue->getLocalizedTitle()} {$issue->getNumber()} {$issue->getYear()}</td>
+					<td><input type="radio" id="issue{$issue->getId()}" name="issueId" value="{$issue->getId()}" required></td>
+				</tr>
+			{/foreach}
 			</tbody>
 		</table>
 
