@@ -15,7 +15,7 @@ namespace APP\plugins\importexport\rsciExport;
 use APP\core\Application;
 use APP\facades\Repo;
 use APP\submission\Submission;
-use APP\issue\Issue;
+
 use APP\template\TemplateManager;
 use Illuminate\Support\LazyCollection;
 use PKP\plugins\ImportExportPlugin;
@@ -61,16 +61,32 @@ class RsciExportPlugin extends ImportExportPlugin
             // Stream a CSV file for download
             case 'exportAll':
                 header('content-type: text/comma-separated-values');
-                header('content-disposition: attachment; filename=articles-' . date('Ymd') . '.csv');
+                header('content-disposition: attachment; filename=articles-' . date('Ymd') . '.xml');
 
                 $submissions = $this->getAll($contextId);
                 //$issues = $this->getAllIssues($contextId);
-                $this->export($submissions, 'php://output');
+                //$this->export($submissions, 'php://output');
 
                 break;
 
             // When no path is requested, display a list of submissions
             // to export and a button to run the `exportAll` path.
+            case 'exportByIssue':
+                $issueId = (int)$request->getUserVar('issueId');
+
+                if ($issueId) {
+                    header('content-type: text/comma-separated-values');
+                    header('content-disposition: attachment; filename=issue-' . $issueId . '-' . date('Ymd') . '.xml');
+                    $journal = new RsciJournal(); // Добавить отображение нескольких журналов
+                    $xmlStr= $journal->getXML($issueId);
+                    //$submissions = $this->getByIssue($contextId, $issueId);
+                    file_put_contents("php://output", $xmlStr);
+                    //$this->export($submissions, 'php://output');
+                } else {
+                    // Если номер не выбран, вернуть на страницу с сообщением об ошибке
+                    $request->redirect(null, 'index', null, ['error' => 'noIssueSelected']);
+                }
+                break;
             default:
                 $templateMgr = TemplateManager::getManager($request);
                 $issues= $this->getAllIssues($contextId);

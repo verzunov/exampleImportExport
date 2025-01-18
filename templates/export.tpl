@@ -14,7 +14,8 @@
 	<h1 class="app__pageHeading">
 		{$pageTitle}
 	</h1>
-
+	<form method="POST" action="{plugin_url path="exportByIssue"}">
+		<p>{translate key="plugins.importexport.rsciExport.selectIssue"}</p>
 	<div class="app__contentPanel">
 		<table class="pkpTable">
 			<thead>
@@ -34,8 +35,8 @@
 			</tbody>
 		</table>
 
-		<form method="POST" action="{plugin_url path="exportAll"}">
-			<button class="pkp_button" type="submit">{translate key="plugins.importexport.rsciExport.exportAll"}</button>
-		</form>
+
+			<button class="pkp_button" type="submit">{translate key="plugins.importexport.rsciExport.exportByIssue"}</button>
+	</form>
 	</div>
 {/block}
